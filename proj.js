@@ -1,27 +1,21 @@
-const crypto = require('crypto');
+const path = require('path')
 
-const start = Date.now();
+console.log(__filename)
+console.log(__dirname)
 
-crypto.pbkdf2( '1234ttt','5', 1000000, 64 , 'sha512', () => {
-    console.log('1 end', Date.now() - start)
-});
+console.log(path.join(__dirname, '..','..','..','..','..'))
+console.log(path.resolve('first','second','third'))
+const fullpath = path.resolve(__dirname,'first','second','third.js')
 
-crypto.pbkdf2( '1234ttt','5', 1000000, 64 , 'sha512', () => {
-    console.log('2 end', Date.now() - start)
-});
+console.log('Парсинг патча:', path.parse(fullpath))
 
-crypto.pbkdf2( '1234ttt','5', 1000000, 64 , 'sha512', () => {
-    console.log('3 end', Date.now() - start)
-});
+//------------------------------------------------------------------
 
-crypto.pbkdf2( '1234ttt','5', 1000000, 64 , 'sha512', () => {
-    console.log('4 end', Date.now() - start)
-});
+const siteUrl = 'https://localhost:8080/users?id=5123'
 
-crypto.pbkdf2( '1234ttt','5', 1000000, 64 , 'sha512', () => {
-    console.log('5 end', Date.now() - start)
-});
+const url = new URL(siteUrl)
 
-crypto.pbkdf2( '1234ttt','5', 1000000, 64 , 'sha512', () => {
-    console.log('6 end', Date.now() - start)
-});
+url.username = 'ws'
+url.password = 'ws'
+
+console.log(url)

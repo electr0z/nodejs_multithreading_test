@@ -2,13 +2,15 @@
   "name": "node-package",
   "version": "1.0.0",
   "description": "none",
-  "main": "proj.js",
+  "main": "http.js",
   "scripts": {
-    "test": "test"
+    "start": "nodemon http.js"
   },
   "author": "civ",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "nodemon": "^2.0.15"
   }
